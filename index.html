@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    console.log('this is a for loop');
+
+    let List = ['Zayyan', 'Zaid', 'Rahul', 'Sannan', 'Sameer', 'messi', 'london', 'united of india'];
+    let b = localStorage.setItem('list', JSON.stringify(List));
+
+    let storedList = JSON.parse(localStorage.getItem('list')) || [];
+    console.log('Local Storage Content =>', storedList);
+    let p;
+    for (let index = 0; index < storedList.length; index++) {
+
+      if (storedList[index].length > 5) {
+        p = document.createElement('p');
+        p.textContent = `this names are greater than 5 ${storedList[index]}`;
+        document.body.append(p);
+      }
+      else {
+        p.textContent = `this names are less than ${storedList[index]}`;
+      }
+
+    }
+  </script>
+</body>
+
+</html>
